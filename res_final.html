@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+ <head >
+  <meta charset="UTF -8">
+  <title> Adjmia's Calculator </title>
+  
+</head>
+<body  >
+ 
+<div id="calcul">
+  <input id="display" readonly>
+  <div >
+    
+    <button class="grey-button "; onclick="display.value='' ";
+  >AC</button>
+
+  <button class="grey-button "; onclick="display.value=-display.value">+/-</button>
+
+  <button class="grey-button "; onclick="display.value=display.value/100">%</button>
+
+  <button class="orange-button "; onclick="updateCalculation('/')">÷</button>
+   <p>
+    <button class="black-button " ; onclick="updateCalculation('7')">7</button>
+
+    <button class="black-button " ; onclick="updateCalculation('8')">8</button>
+
+   <button class="black-button " ; onclick="updateCalculation('9')">9</button>
+
+   <button class="orange-button "; onclick="updateCalculation('*')">×</button>
+   </p>
+  
+   <p>
+   <button class="black-button " ; onclick="updateCalculation('4')">4</button>
+
+  <button class="black-button "; onclick="updateCalculation('5')">5</button>
+
+  <button class="black-button "; onclick="updateCalculation('6')">6</button>
+
+  <button class="orange-button "; onclick="updateCalculation('-')">-</button>
+  </p>
+
+  <p>
+  <button class="black-button " ; onclick="updateCalculation('1')">1</button>
+
+  <button class="black-button " ; onclick="updateCalculation('2')">2</button>
+
+  <button class="black-button "; onclick="updateCalculation('3')">3</button>
+
+  <button  class="orange-button "; onclick="updateCalculation('+')";
+  >+</button>
+</p>
+
+<p>
+<button class="zero-button " ; onclick="updateCalculation('0')">0</button>
+
+<button class="black-button "; onclick="updateCalculation('.')">,</button>
+
+<button class="orange-button "; onclick="calculate()">=
+</button>
+
+</p>
+</div>
+</div> 
+
+
+
+<style>
+body{
+  margin:0;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  background-image: url("phone.jpg");
+  background-position: center;
+  background-attachment: fixed;
+ background-size: 1100px;
+
+}
+#calcul{
+  background-color: black;
+  border-radius: 15px;
+  max-width:240px;
+  margin:1cm;
+  overflow:auto;
+}
+#display{
+  width: 100%;
+  padding:0px;
+  font-size: 5rem;
+  text-align: right;
+  margin-top: 2cm;
+  border: none;
+  background-color:black;
+  color:white;
+}
+button{
+  border: none;
+height: 55px;
+width: 55px;
+border-radius: 100%;
+border-bottom: 100%;
+cursor: pointer;
+font-size: 25px;
+font-family: Arial, Helvetica, sans-serif ;
+margin-right: 0.05cm;
+
+}
+.black-button{
+  background-color: rgb(76, 74, 74);
+  color: white;
+}
+.grey-button{
+  background-color: rgb(150, 143, 143);
+  color: black;
+}
+
+.orange-button{
+  background-color:rgb(255, 151, 6);
+color: white;
+font-weight: bolder;
+}
+
+.zero-button{
+padding-left: 20px;
+background-color: rgb(76, 74, 74);
+color: white;
+padding-right: 10px;
+width: 3cm;
+text-align: start;
+margin-right: 0.05cm;
+border-radius: 70px;
+border-bottom: 80%;
+}
+
+.orange-button:hover{
+  background-color:rgb(246, 188, 107);
+}
+
+.orange-button:active{
+  background-color:white ;
+}
+.grey-button:hover{
+  background-color: rgb(227, 220, 220);
+}
+.black-button:hover{
+  background-color:rgb(168, 163, 163) ;
+}
+</style>
+
+</body>
+
+<script>
+
+const display=document.getElementById("display");
+  
+function updateCalculation(input){
+ display.value+=input;}
+
+function clear(){
+  display.value="";
+}
+function calculate(){
+try{
+  display.value= eval(display.value);
+}
+catch(error){
+  display.value="Error";
+}
+}
+  
+
+</script>
+
+</html>
